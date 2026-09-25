@@ -1,0 +1,14 @@
+# Dependencies
+node_modules
+
+# Docusaurus generated
+.docusaurus
+build
+
+# Synced from research-book by scripts/sync-content.mjs — not source of truth
+/docs
+
+# Misc
+.DS_Store
+.env.local
+npm-debug.log*
