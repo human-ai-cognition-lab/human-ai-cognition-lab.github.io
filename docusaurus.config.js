@@ -56,10 +56,6 @@ const config = {
           },
         ],
       },
-      footer: {
-        style: 'dark',
-        copyright: `Copyright © ${new Date().getFullYear()} Human-AI Cognition Lab`,
-      },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
