@@ -1,21 +1,16 @@
 # human-ai-cognition-lab.github.io
 
-Human-AI Cognition Lab의 공개 연구 사이트 ([Docusaurus](https://docusaurus.io/)). 실제 콘텐츠는 이 레포가 아니라 [research-book](https://github.com/human-ai-cognition-lab/research-book)(mdBook 소스)에서 작성하고, `scripts/sync-content.mjs`가 빌드 시점에 가져와 `docs/`에 반영합니다. `docs/`는 생성물이라 git에 커밋하지 않습니다.
+Human-AI Cognition Lab의 공개 연구 사이트를 GitHub Pages에 배포하기 위한 껍데기 레포입니다. 이 레포에는 콘텐츠나 빌드 코드가 없습니다 — CI가 [research-book](https://github.com/human-ai-cognition-lab/research-book)을 체크아웃해서 [mdBook](https://rust-lang.github.io/mdBook/)으로 직접 빌드하고 배포합니다.
 
-## 로컬 개발
+글 작성/수정은 항상 `research-book`에서 합니다. 이 레포는 건드릴 일이 거의 없습니다.
 
-`research-book`이 이 레포와 형제 폴더로 clone되어 있어야 합니다 (기본 경로: `../research-book`).
+## 로컬 미리보기
 
-```
-npm install
-npm start
-```
-
-`npm start`/`npm run build` 실행 전에 `npm run sync`가 자동으로 실행되어 최신 콘텐츠를 가져옵니다.
+이 레포가 아니라 `research-book`에서 `mdbook serve`를 실행하세요.
 
 ## 배포
 
-`main` 브랜치 push, `research-book` 업데이트(repository_dispatch), 또는 수동 실행(`workflow_dispatch`) 시 `.github/workflows/deploy.yml`이 빌드 후 GitHub Pages에 배포합니다.
+`research-book`의 `main` 브랜치에 push되면 → repository_dispatch로 이 레포의 `.github/workflows/deploy.yml`이 트리거되어, `research-book`을 체크아웃하고 `mdbook build` 후 GitHub Pages에 배포합니다. 이 레포 자체에 push하거나 수동 실행(`workflow_dispatch`)해도 재배포됩니다.
 
 ### 최초 1회 수동 설정 필요
 

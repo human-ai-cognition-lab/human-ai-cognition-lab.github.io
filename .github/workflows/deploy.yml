@@ -20,29 +20,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout site
-        uses: actions/checkout@v4
-
       - name: Checkout research-book content
         uses: actions/checkout@v4
         with:
           repository: human-ai-cognition-lab/research-book
-          path: content/research-book
 
-      - uses: actions/setup-node@v4
+      - name: Install mdbook
+        uses: peaceiris/actions-mdbook@v2
         with:
-          node-version: 20
-          cache: npm
+          mdbook-version: "latest"
 
-      - run: npm ci
-
-      - run: npm run build
-        env:
-          CONTENT_DIR: content/research-book
+      - run: mdbook build
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: build
+          path: book
 
   deploy:
     needs: build
