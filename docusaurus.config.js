@@ -50,7 +50,7 @@ const config = {
         title: 'Human-AI Cognition Lab',
         items: [
           {
-            href: 'https://github.com/human-ai-cognition-lab',
+            href: 'https://github.com/human-ai-cognition-lab/research-book',
             label: 'GitHub',
             position: 'right',
           },
