@@ -1,1 +1,22 @@
 /* Intentionally minimal — using Docusaurus classic theme defaults. */
+
+/* Simplify the prev/next footer nav into plain text links instead of cards. */
+.pagination-nav__link {
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+.pagination-nav__link:hover {
+  border-color: transparent;
+  background: transparent;
+  text-decoration: underline;
+}
+
+.pagination-nav__sublabel {
+  display: none;
+}
+
+.pagination-nav__label {
+  font-size: 0.95rem;
+}
